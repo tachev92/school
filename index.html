@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Подкрепи своя обучител!</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      padding: 24px; font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+      background: radial-gradient(circle at top left, #dbeafe, transparent 38%),
+                  linear-gradient(135deg, #f8fafc, #eef2ff);
+      color: #172033;
+    }
+    .card {
+      width: min(100%, 520px); background: white; border: 1px solid #e2e8f0;
+      border-radius: 24px; padding: clamp(24px, 6vw, 42px); text-align: center;
+      box-shadow: 0 20px 60px rgba(30, 41, 59, .12);
+    }
+    .icon { font-size: 52px; margin-bottom: 12px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 800; color: #64748b; }
+    h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.1; margin: 12px 0; }
+    .subtitle { color: #64748b; margin: 0 0 26px; }
+    .amount { font-size: 48px; font-weight: 850; margin: 18px 0 4px; letter-spacing: -2px; }
+    .description { color: #475569; line-height: 1.65; margin: 0 auto 24px; max-width: 390px; }
+    button {
+      width: 100%; border: 0; border-radius: 14px; padding: 16px 20px;
+      background: #2563eb; color: white; font-size: 17px; font-weight: 800;
+      cursor: pointer; box-shadow: 0 8px 18px rgba(37, 99, 235, .22);
+    }
+    button:hover { background: #1d4ed8; }
+    .fine { color: #94a3b8; font-size: 12px; margin: 18px 0 0; }
+    .reveal { display: none; margin-top: 24px; padding: 20px; border-radius: 16px; background: #fef3c7; color: #78350f; }
+    .reveal h2 { margin: 0 0 8px; font-size: 25px; }
+    .reveal p { margin: 0; line-height: 1.55; }
+    .footer { color: #94a3b8; font-size: 11px; margin-top: 22px; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="icon" aria-hidden="true">🎓☕</div>
+    <div class="eyebrow">Google Classroom Masterclass · Pleven 2026</div>
+    <h1>Подкрепи своя обучител!</h1>
+    <p class="subtitle">За знанията, уменията и безкрайното търпение.</p>
+    <div class="amount">5,00 €</div>
+    <p class="description">Вашият принос ще подпомогне закупуването на кафе, нови технологични джаджи и търпение за следващото обучение.</p>
+    <button id="donate" type="button">Дари 5 € ☕</button>
+    <section id="reveal" class="reveal" role="status" aria-live="polite">
+      <h2>😂 Хванахме ви!</h2>
+      <p>Това беше тест за дигитална грамотност! Няма реално плащане — приемат се само усмивки и аплодисменти.<br><strong>Благодаря за участието и успешна работа с Google Classroom!</strong></p>
+    </section>
+    <p class="fine">* Даренията се приемат единствено в усмивки и аплодисменти.</p>
+    <div class="footer">Демонстрационна страница · Няма обработка на плащания или лични данни</div>
+  </main>
+  <script>
+    document.getElementById('donate').addEventListener('click', function () {
+      document.getElementById('reveal').style.display = 'block';
+      this.textContent = 'Дарението е… виртуално! 😄';
+      this.disabled = true;
+      this.style.opacity = '.8';
+    });
+  </script>
+</body>
+</html>
